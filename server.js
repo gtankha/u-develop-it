@@ -1,6 +1,4 @@
 const express = require('express');
-
-const inputCheck = require('./utils/inputCheck');
 const db = require('./db/database');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,9 +10,6 @@ app.use('/api', apiRoutes);
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-
-
 
 
  

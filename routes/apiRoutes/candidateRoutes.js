@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../db/database');
 const inputCheck = require('../../utils/inputCheck');
+router.use(express.urlencoded({ extended: false }));
+router.use(express.json());
 
 // Get all candidates
 router.get('/candidates', (req, res) => {
@@ -86,7 +88,7 @@ router.post('/candidate', ({ body }, res) => {
     });
 });
 
-router.put('/api/candidate/:id', (req, res) => {
+router.put('/candidate/:id', (req, res) => {
     const errors = inputCheck(req.body, 'party_id');
 
     if (errors) {

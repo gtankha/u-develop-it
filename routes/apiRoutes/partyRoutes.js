@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db/database');
+router.use(express.urlencoded({ extended: false }));
+router.use(express.json());
 
 
 router.get('/parties', (req, res) => {
